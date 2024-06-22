@@ -1,0 +1,35 @@
+:root {
+  /* セクション番号を表示（"1.1.1" の形式） */
+  --vs-section--marker-display: inline;
+  /* 目次項目番号を表示 */
+  --vs-toc--marker-display: inline;
+  /* 目次項目番号を "1.1.1" の形式にする */
+  --vs-toc--marker-content: counters(vs-counter-toc, '.') ' ';
+}
+
+/* 目次項目番号の配置の調整 */
+:is(#toc, [role='doc-toc']) li::before {
+  inline-size: 5em;
+  inset-inline-start: -6em;
+  text-align: end;
+}
+
+/* 図 */
+figure {
+  /* バグ https://github.com/vivliostyle/vivliostyle.js/issues/1351 の回避に必要 */
+  inline-size: 100%;
+}
+
+/* 脚注がネストできないバグの回避 */
+.footnote .footnote {
+  float: none;
+  counter-increment: none;
+}
+
+.footnote .footnote::before {
+  content: '（';
+}
+
+.footnote .footnote::after {
+  content: '）';
+}

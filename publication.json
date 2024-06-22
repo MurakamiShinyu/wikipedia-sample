@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "name": "神話／Wikipediaから",
+  "author": "Wikipedia",
+  "inLanguage": "ja",
+  "dateModified": "2024-06-22T04:57:22.143Z",
+  "readingOrder": [
+    {
+      "url": "index.html",
+      "name": "目次",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "%E7%A5%9E%E8%A9%B1.html",
+      "name": "神話"
+    },
+    {
+      "url": "%E3%82%AE%E3%83%AA%E3%82%B7%E3%82%A2%E7%A5%9E%E8%A9%B1.html",
+      "name": "ギリシア神話"
+    },
+    {
+      "url": "%E6%97%A5%E6%9C%AC%E7%A5%9E%E8%A9%B1.html",
+      "name": "日本神話"
+    }
+  ],
+  "resources": [],
+  "links": []
+}
