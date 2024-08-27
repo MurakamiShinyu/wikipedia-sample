@@ -5,13 +5,21 @@
   --vs-toc--marker-display: inline;
   /* 目次項目番号を "1.1.1" の形式にする */
   --vs-toc--marker-content: counters(vs-counter-toc, '.') ' ';
+  --vs-toc--marker-text-align: end;
 }
 
 /* 目次項目番号の配置の調整 */
 :is(#toc, [role='doc-toc']) li::before {
-  inline-size: 5em;
-  inset-inline-start: -6em;
-  text-align: end;
+  inset-inline-start: calc(var(--vs-toc--ol-indent-size) * -6);
+  inline-size: calc(var(--vs-toc--ol-indent-size) * 5.5);
+}
+
+/* セクションのカウンターがファイル境界をまたいだ連番にできない問題に対処 */
+h1#ギリシア神話 {
+  counter-set: vs-counter-sections 2;
+}
+h1#日本神話 {
+  counter-set: vs-counter-sections 3;
 }
 
 /* 図 */
@@ -20,16 +28,22 @@ figure {
   inline-size: 100%;
 }
 
-/* 脚注がネストできないバグの回避 */
-.footnote .footnote {
+/* 図をページフロートにより上側に配置 */
+figure {
+  float-reference: page;
+  float: block-start;
+}
+
+/* 脚注がネストできない、またページフロート内で機能しないバグの回避 */
+:is(.footnote, figcaption) .footnote {
   float: none;
   counter-increment: none;
 }
 
-.footnote .footnote::before {
+:is(.footnote, figcaption) .footnote::before {
   content: '（';
 }
 
-.footnote .footnote::after {
+:is(.footnote, figcaption) .footnote::after {
   content: '）';
 }

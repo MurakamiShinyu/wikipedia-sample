@@ -80,7 +80,7 @@ text = text.replace(/^\[\[Category:.+?\]\]$/gm, "");
 
 // とりあえずこれらの記事だけリンクにする
 text = text.replace(/\[\[ギリシャ神話\]\]/g, "[[ギリシア神話]]");
-text = text.replace(/\[\[(神話|ギリシア神話|日本神話)\]\]/g, "[$1]($1.html)");
+text = text.replace(/- \[\[(神話|ギリシア神話|日本神話)\]\]/g, "- [$1]($1.html)");
 
 text = text.replace(/\[\[([^\[\]|]+?)\|([^\[\]|]+?)\]\]/g, "$2");
 text = text.replace(/\[\[([^\[\]|]+?)\]\]/g, "$1");
