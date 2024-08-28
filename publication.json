@@ -8,8 +8,14 @@
   "name": "神話／Wikipediaから",
   "author": "Wikipedia",
   "inLanguage": "ja",
-  "dateModified": "2024-08-23T09:18:30.678Z",
+  "dateModified": "2024-08-28T03:35:02.861Z",
   "readingOrder": [
+    {
+      "url": "cover.html",
+      "name": "神話／Wikipediaから",
+      "rel": "cover",
+      "type": "LinkedResource"
+    },
     {
       "url": "index.html",
       "name": "目次",
@@ -29,6 +35,13 @@
       "name": "日本神話"
     }
   ],
-  "resources": [],
+  "resources": [
+    {
+      "rel": "cover",
+      "url": "cover.jpg",
+      "name": "Cover image",
+      "encodingFormat": "image/jpeg"
+    }
+  ],
   "links": []
 }

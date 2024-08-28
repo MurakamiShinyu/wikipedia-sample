@@ -10,6 +10,11 @@ function md5hex(str) {
 
 let text = fs.readFileSync(process.stdin.fd, "utf-8");
 
+// Wikiテキストで問題がある箇所を応急的に修正
+text = text.replace(/\[\[ギリシャ神話\]\]/g, "[[ギリシア神話]]");
+text = text.replace(/Image:Hector1-4225\.jpg/g, "Image:Pierre_François_Delorme,_Hector1-4225.jpg");
+text = text.replace(/ファイル:Inasa Beach\.jpg/g, "ファイル:Bentenjima_on_Inasa_Beach.jpg");
+
 // Title
 const title = text.match(/'''(.+?)'''/m)?.[1];
 
@@ -79,7 +84,6 @@ text = text.replace(/^\[\[Category:.+?\]\]$/gm, "");
 // text = text.replace(/\[\[([^|]+?)\]\]/g, "[$1](https://wikipedia.org/wiki/$1)");
 
 // とりあえずこれらの記事だけリンクにする
-text = text.replace(/\[\[ギリシャ神話\]\]/g, "[[ギリシア神話]]");
 text = text.replace(/- \[\[(神話|ギリシア神話|日本神話)\]\]/g, "- [$1]($1.html)");
 
 text = text.replace(/\[\[([^\[\]|]+?)\|([^\[\]|]+?)\]\]/g, "$2");

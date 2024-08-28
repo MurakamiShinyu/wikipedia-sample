@@ -37,7 +37,7 @@ const vivliostyleConfig = {
     htmlPath: 'index.html',
     sectionDepth: 4,
   },
-  // cover: './cover.png', // cover image. default to undefined.
+  cover: './cover.jpg', // cover image. default to undefined.
   // vfm: { // options of VFM processor
   //   replace: [ // specify replace handlers to modify HTML outputs
   //     {
